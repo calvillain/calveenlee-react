@@ -6,7 +6,7 @@ import AboutComponent from './About/AboutComponent'
 class Main extends React.Component {
   render() {
     return (
-      <div>
+      <div> 
         <HeaderComponent />
         <content>
           <AboutComponent />

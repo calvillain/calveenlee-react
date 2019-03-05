@@ -9,7 +9,7 @@ class AboutComponent extends React.Component {
       <Container>
         <Row>
           <Col>
-            <h1>Calvin J. Lee</h1>
+            <h3>hi there</h3>
           </Col>
         </Row>
       </Container>
