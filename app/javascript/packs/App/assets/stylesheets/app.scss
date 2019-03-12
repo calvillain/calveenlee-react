@@ -1,26 +1,6 @@
 @import '~bootstrap/scss/bootstrap.scss';
 
 body {
-  background-color: gray;
-}
-
-header {
-  height: 100vh;
-}
-
-.navbar-brand {
-  font-weight: 700;
-}
-
-.intro {
-  display: table;
-  padding: 0;
-  width: 100%;
-  height: 100%; 
-}
-
-.intro-body {
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
+  color: #ddd;
+  background-color: #000;
 }
