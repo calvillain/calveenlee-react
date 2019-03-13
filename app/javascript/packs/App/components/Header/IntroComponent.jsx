@@ -26,7 +26,7 @@ var introH1Style = {
 class IntroComponent extends React.Component {
   render() {
     return (
-      <div className='intro' style={introStyle}>
+      <div id='intro' className='intro' style={introStyle}>
         <div className='intro intro-body' style={introBodyStyle}>
           <h1 style={introH1Style}>Calvin J. Lee</h1>
         </div>

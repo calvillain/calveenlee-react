@@ -1,7 +1,8 @@
 import React from 'react'
-import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-
+import Navbar from 'react-bootstrap/Navbar'
+import { NavHashLink as NavLink } from 'react-router-hash-link'
+import { Link, scroller} from 'react-scroll'
 
 var NavbarTopStyle = {
   fontFamily: 'Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif',
@@ -16,7 +17,15 @@ var NavbarStyle = {
 var NavLinkStyle = {
   textTransform: 'uppercase'
 }
-
+var LinkProps = {
+  spy: true,
+  smooth: 'easeInOutQuint',
+  hashSpy: true,
+  duration: 3000,
+  delay: 300
+}
+var BrandLinkProps = { ...LinkProps }
+BrandLinkProps.hashSpy = false
       
 class NavComponent extends React.Component {
   constructor(props) {
@@ -43,13 +52,36 @@ class NavComponent extends React.Component {
   render() {
     return (
       <Navbar variant='dark' expand='sm' fixed='top' style={this.state.top ? NavbarTopStyle : NavbarStyle}>
-        <Navbar.Brand href='/'>calveenlee.com | <b>portfolio</b></Navbar.Brand>
+        <Link className='navbar-brand' 
+              {...BrandLinkProps}
+              href='#'
+              to='intro'>
+          calveenlee.com | <b>portfolio</b>
+        </Link>
         <Navbar.Toggle aria-controls='topbar' />
         <Navbar.Collapse id='topbar'>
           <Nav className='ml-auto'> 
-            <Nav.Link style={NavLinkStyle} href='#about'>About</Nav.Link>
-            <Nav.Link style={NavLinkStyle} href='#work'>Work</Nav.Link>
-            <Nav.Link style={NavLinkStyle} href='#contact'>Contact</Nav.Link>
+            <Link className='nav-link' 
+                  {...LinkProps}
+                  href='#about'
+                  style={NavLinkStyle} 
+                  to='about'>
+              About
+            </Link>
+            <Link className='nav-link' 
+                  {...LinkProps}
+                  href='#work'
+                  style={NavLinkStyle} 
+                  to='work'>
+              Work
+            </Link>
+            <Link className='nav-link'
+                  {...LinkProps}
+                  href='#contact'
+                  style={NavLinkStyle}
+                  to='contact'>
+              Contact
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
