@@ -4,28 +4,28 @@ import Navbar from 'react-bootstrap/Navbar'
 import { NavHashLink as NavLink } from 'react-router-hash-link'
 import { Link, scroller} from 'react-scroll'
 
-var NavbarTopStyle = {
+var navbarTopStyle = {
   fontFamily: 'Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif',
   transition: 'background .5s ease-in-out',
   background: 'transparent'
 }
-var NavbarStyle = {
+var navbarStyle = {
   fontFamily: 'Montserrat,Helvetica Neue,Helvetica,Arial,sans-serif',
   transition: 'background .5s ease-in-out',
   background: '#000'
 }
-var NavLinkStyle = {
+var navLinkStyle = {
   textTransform: 'uppercase'
 }
-var LinkProps = {
+var linkProps = {
   spy: true,
   smooth: 'easeInOutQuint',
   hashSpy: true,
-  duration: 3000,
-  delay: 300
+  duration: 2000,
+  delay: 200
 }
-var BrandLinkProps = { ...LinkProps }
-BrandLinkProps.hashSpy = false
+var brandLinkProps = { ...linkProps }
+brandLinkProps.hashSpy = false
       
 class NavComponent extends React.Component {
   constructor(props) {
@@ -51,9 +51,9 @@ class NavComponent extends React.Component {
 
   render() {
     return (
-      <Navbar variant='dark' expand='sm' fixed='top' style={this.state.top ? NavbarTopStyle : NavbarStyle}>
+      <Navbar variant='dark' expand='sm' fixed='top' style={this.state.top ? navbarTopStyle : navbarStyle}>
         <Link className='navbar-brand' 
-              {...BrandLinkProps}
+              {...brandLinkProps}
               href='#'
               to='intro'>
           calveenlee.com | <b>portfolio</b>
@@ -62,23 +62,23 @@ class NavComponent extends React.Component {
         <Navbar.Collapse id='topbar'>
           <Nav className='ml-auto'> 
             <Link className='nav-link' 
-                  {...LinkProps}
+                  {...linkProps}
                   href='#about'
-                  style={NavLinkStyle} 
+                  style={navLinkStyle} 
                   to='about'>
               About
             </Link>
             <Link className='nav-link' 
-                  {...LinkProps}
+                  {...linkProps}
                   href='#work'
-                  style={NavLinkStyle} 
+                  style={navLinkStyle} 
                   to='work'>
               Work
             </Link>
             <Link className='nav-link'
-                  {...LinkProps}
+                  {...linkProps}
                   href='#contact'
-                  style={NavLinkStyle}
+                  style={navLinkStyle}
                   to='contact'>
               Contact
             </Link>
